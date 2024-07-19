@@ -1,0 +1,259 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  margin: 0 20px;
+  background-color: hsl(36, 100%, 99%);
+  height: 100vh;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 110px;
+  width: 95%;
+}
+
+.link-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.link-container a {
+  padding: 0 40px;
+  text-decoration: none;
+  color: #00001a;
+}
+
+.link-container a:hover {
+  color: #f15e50;
+}
+
+#sidebar-active {
+  display: none;
+}
+
+.menu, .close {
+  display: none;
+}
+
+/* Grid content */
+.grid-container {
+  display: grid;
+  gap: 20px;
+
+  grid-template-columns: 40em 57em auto;
+  grid-template-rows: 39em 14em;
+}
+
+.item1 {
+  /* width: fit-content; */
+  grid-column-start: 1;
+  grid-column-end: 3;
+  background-image: url(assets/images/image-web-3-desktop.jpg);
+}
+
+.item2 {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  display: flex;
+  align-items: center;
+}
+
+.item2 > h1 {
+  font-weight: 700;
+  font-size: 3em;
+  color: #00001a;
+}
+
+.item3 {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;  
+  display: grid;
+  align-items: center;
+}
+
+.item3 p {
+  font-size: 2.1em;
+  color: #5d5f79;
+}
+
+.item3 button {
+  width: 250px;
+  padding: 15px 70px;
+  font-size: 16px;
+  background-color: #00001a;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+}
+
+.item4 {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 3;  
+  width: 80%;
+  background-color: #00001a;
+}
+
+.item4 > div {
+  height: 100%;
+  padding: 1em;
+  font-size: 25px;
+}
+
+.item4 h1 {
+  color: #e9ab53;
+  margin: 50px 0;
+}
+
+.item4 h3 {
+  color: #fff;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.item4 h3:hover {
+  color: #e9ab53;
+}
+
+.item4 p {
+  color: #5d5f79;
+  font-size: 20px;
+  margin-bottom: 50px;
+  line-height: 35px;
+}
+
+.divider {
+  border: 1px solid #5d5f79;
+  margin-bottom: 50px;
+}
+
+.technologies {
+  display: flex;
+  justify-content: space-between;
+  height: 150px;
+  margin: 70px 0;
+}
+
+.technologies > div {
+  display: flex;
+  font-size: 26px;
+}
+
+.technologies img {
+  margin-right: 40px;
+}
+
+.tech-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tech-detail p {
+  color: #5d5f79;
+}
+
+.technologies h3 {
+  color: #f15e50;
+  font-size: 37px;
+}
+
+.technologies h4:hover {
+  color: #f15e50;
+  cursor: pointer;
+}
+
+@media (max-width: 425px) {
+  .grid-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .item1 {
+    background-image: url(assets/images/image-web-3-mobile.jpg);
+    height: 300px;
+  }
+
+  .item3 button {
+    background-color: #f15e50;
+    color: #00001a;
+    font-weight: 700;
+    margin-top: 20px;
+    border: none;
+  }
+
+  .item4 {
+    width: 100%;
+  }
+
+  .technologies {
+    display: block;
+  }
+
+  .technologies div {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .technologies img {
+    height: 100px;
+  }
+
+  .tech-detail {
+    font-size: 16px;
+  }
+}
+
+
+@media (max-width: 425px) {
+  .link-container {
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    z-index: 10;
+    width: 200px;
+    background-color: white;
+    box-shadow: -5px 0 -5px rgba(0, 0, 0, 0.25);
+    transition: 0.75s ease-in-out;
+  }
+  .link-container a {
+    padding: 10px;
+  }
+  .menu, .close {
+    display: block;
+  }
+  .menu, .close {
+    display: block;
+    padding: 20px 0 60px 157px;
+  }
+}
+#sidebar-active:checked ~ .link-container {
+  right: 0;
+}
+
+#sidebar-active:checked ~ #overlay {
+  background-color: hsl(233, 8%, 79%);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0.4;
+  z-index: 9;
+}/*# sourceMappingURL=style.css.map */
